@@ -24,15 +24,14 @@ public class KeywordController {
 	@Autowired
 	private KeywordRepository repository;
 
-
 	@GetMapping(path = "/")
 	public ModelAndView index(@ModelAttribute("formModel") Keyword keyword, ModelAndView mav) {
 		mav.setViewName("index");
-		mav.addObject("msg", "this is sample CRUD page!!");
 		Iterable<Keyword> list = repository.findAll();
 		mav.addObject("datalist", list);
 		return mav;
 	}
+
 
 	@PostMapping(path = "/")
 	@Transactional(readOnly = false)
@@ -40,7 +39,7 @@ public class KeywordController {
 		repository.saveAndFlush(keyword);
 		return new ModelAndView("redirect:/");
 	}
-
+	
 	@GetMapping(path="/edit/{id}")
 	public ModelAndView edit(@ModelAttribute Keyword keyword,@PathVariable int id,ModelAndView mav) {
 		mav.setViewName("edit");
