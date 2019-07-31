@@ -5,7 +5,7 @@
 	<title>edit</title>
 </head>
 <body>
-	<h1 th:text="#{title}">Edit page</h1>
+	<h1>Edit page</h1>
 	<table>
 	<form method="post" action="/edit" th:object="${formModel}">
 	<input type="hidden" name="id" th:value="*{id}" />
