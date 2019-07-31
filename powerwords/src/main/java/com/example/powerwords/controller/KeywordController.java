@@ -43,7 +43,7 @@ public class KeywordController {
 	@GetMapping(path="/edit/{id}")
 	public ModelAndView edit(@ModelAttribute Keyword keyword,@PathVariable int id,ModelAndView mav) {
 		mav.setViewName("edit");
-		mav.addObject("title","edit mydata");
+		//mav.addObject("title","edit mydata");
 		Optional<Keyword> data = repository.findById(id);
 		mav.addObject("formModel",data.get());
 		return mav;
