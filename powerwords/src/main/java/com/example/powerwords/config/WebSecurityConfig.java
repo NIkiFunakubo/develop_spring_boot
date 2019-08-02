@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -20,6 +21,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	private UserService userService;
 	
 	@Override
+	public void configure(WebSecurity web)throws Exception {
+		web.ignoring().antMatchers("/css/**","/image/**","/js/**");
+	}
+	
+	@Override
 	protected void configure(HttpSecurity http)throws Exception {
 		http
 			.authorizeRequests()
@@ -28,11 +34,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 			.formLogin()
 				.loginPage("/login").failureUrl("/login-error").usernameParameter("username")
-                .passwordParameter("password");
+				.passwordParameter("password");
 		http
 			.logout().logoutSuccessUrl("/login").permitAll();
-		http.csrf().disable().formLogin().loginProcessingUrl("/auth").loginPage("/login").failureUrl("/login-error")
-        .defaultSuccessUrl("/top", true).usernameParameter("userId").passwordParameter("password");
+		http
+			.csrf().disable().formLogin().loginPage("/login").failureUrl("/login-error")
+			.defaultSuccessUrl("/", true).usernameParameter("username").passwordParameter("password");
 	}
 
 	@Override
