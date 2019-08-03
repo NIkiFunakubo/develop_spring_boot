@@ -1,4 +1,4 @@
-package com.example.powerwords.config;
+package com.example.powerwords.controller;
 
 
 import org.slf4j.Logger;
