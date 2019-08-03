@@ -33,13 +33,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/**").hasRole("USER")
 				.and()
 			.formLogin()
-				.loginPage("/login").failureUrl("/login-error").usernameParameter("username")
+				.loginPage("/login")
+				.failureUrl("/login-error")
+				.usernameParameter("username")
+				.passwordParameter("password")
+				.and()
+			.logout()
+				.logoutSuccessUrl("/")
+				.permitAll();
+		http
+			.csrf().disable()
+			.formLogin()
+				.loginPage("/login")
+				.failureUrl("/login-error")
+				.defaultSuccessUrl("/", true)
+				.usernameParameter("username")
 				.passwordParameter("password");
-		http
-			.logout().logoutSuccessUrl("/login").permitAll();
-		http
-			.csrf().disable().formLogin().loginPage("/login").failureUrl("/login-error")
-			.defaultSuccessUrl("/", true).usernameParameter("username").passwordParameter("password");
 	}
 
 	@Override

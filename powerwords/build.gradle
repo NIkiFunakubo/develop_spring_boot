@@ -34,6 +34,6 @@ dependencies {
 	compile "org.thymeleaf.extras:thymeleaf-extras-springsecurity5:3.0.4.RELEASE"
 	compile "org.springframework.security:spring-security-config"
 	compile "org.springframework.security:spring-security-web"
-	runtime 'org.springframework.boot:spring-boot-devtools'
 	compile 'org.springframework.boot:spring-boot-starter-test'
+	runtime 'org.springframework.boot:spring-boot-devtools'
 }
