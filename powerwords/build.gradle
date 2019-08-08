@@ -16,13 +16,20 @@ configurations {
 	}
 }
 
+processResources.destinationDir = compileJava.destinationDir
+compileJava.dependsOn processResources
+
 repositories {
 	mavenCentral()
+	maven {url 'https://oss.sonatype.org/content/repositories/snapshots/'}
 }
 
 ext['thymeleaf.version'] = '3.0.11.RELEASE'
 ext['thymeleaf-layout-dialect.version'] = '2.1.1'
 
+configurations {
+    domaGenRuntime
+}
 
 dependencies {
 	compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
@@ -36,4 +43,6 @@ dependencies {
 	compile "org.springframework.security:spring-security-web"
 	compile 'org.springframework.boot:spring-boot-starter-test'
 	runtime 'org.springframework.boot:spring-boot-devtools'
+	compile 'org.seasar.doma.boot:doma-spring-boot-starter:1.1.1'
+	domaGenRuntime 'org.seasar.doma:doma-gen:2.12.1'
 }

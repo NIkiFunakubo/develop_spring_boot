@@ -15,6 +15,8 @@ public class Keyword {
 	
 	private String keyword;
 	
+	private String description;
+	
 	
 	public Integer getId() {
 		return id;
@@ -36,5 +38,13 @@ public class Keyword {
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	}
+	public String getDescription() {
+		return description;
+	}
+	public void setdescription() {
+		this.description = description;
+	}
+	
+	
 	
 }

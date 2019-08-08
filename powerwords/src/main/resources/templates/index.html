@@ -8,6 +8,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+<link rel="stylesheet" href="/css/style.css" th:href="@{../css/style.css}">
 <title>CRUD Sample</title>
 </head>
 
@@ -27,6 +28,10 @@
 				<label for="name">キーワード</label> <input type="text" name="keyword"
 					th:value="*{keyword}" class="form-control" />
 			</div>
+			<div class="form-group px-3">
+				<label for="description">説明</label> <input type="text" name="description"
+					th:value="*{description}" class="form-control" />
+			</div>
 			<div class="p-3">
 				<button type="submit" class="btn btn-outline-success">送信</button>
 			</div>
@@ -34,6 +39,14 @@
 
 		<hr>
 
+		<div class="jambotron mb-3" th:each="obj : ${datalist}">
+			<h1 th:text="${obj.keyword}" class="display-5"></h1>
+			<!--  <p th:text="${obj.description}" class="lead"></p>-->
+			<hr class="my-4" />
+			<p th:text="${obj.description}" class="lead"></p>
+			<p class="text-riglt" th:text="${obj.userName}"></p>
+		</div>
+		<!-- 
 		<table>
 			<tr>
 				<th>id</th>
@@ -41,7 +54,7 @@
 				<th>キーワード</th>
 			</tr>
 
-			<tr th:each="obj : ${datalist}">
+			<tr >
 				<td th:text="${obj.id}"></td>
 				<td th:text="${obj.userName}"></td>
 				<td th:text="${obj.keyword}"></td>
@@ -52,6 +65,7 @@
 			</tr>
 
 		</table>
+		 -->
 	</div>
 </body>
 
