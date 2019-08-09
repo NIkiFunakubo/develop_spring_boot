@@ -27,18 +27,19 @@ public class KeywordController {
 	@GetMapping(path = "/")
 	public ModelAndView index(@ModelAttribute("formModel") Keyword keyword, ModelAndView mav) {
 		mav.setViewName("index");
-		Iterable<Keyword> list = repository.findAll();
+		Iterable<Keyword> list = repository.findall();
 		mav.addObject("datalist", list);
 		return mav;
 	}
 
-
+/*
 	@PostMapping(path = "/")
 	@Transactional(readOnly = false)
 	public ModelAndView form(@ModelAttribute("formModel") Keyword keyword, ModelAndView mav) {
 		repository.saveAndFlush(keyword);
 		return new ModelAndView("redirect:/");
 	}
+	*/
 	
 	@GetMapping(path="/edit/{id}")
 	public ModelAndView edit(@ModelAttribute Keyword keyword,@PathVariable int id,ModelAndView mav) {
@@ -48,13 +49,14 @@ public class KeywordController {
 		mav.addObject("formModel",data.get());
 		return mav;
 	}
-
+/*
 	@PostMapping(path="/edit")
 	@Transactional(readOnly=false)
 	public ModelAndView update(@ModelAttribute("formModel") Keyword keyword,ModelAndView mav) {
 		repository.saveAndFlush(keyword);
 		return new ModelAndView("redirect:/");
 	}
+	*/
 	
 	@GetMapping(path="/delete/{id}")
 	public ModelAndView delete(@PathVariable int id,ModelAndView mav) {
@@ -64,11 +66,12 @@ public class KeywordController {
 		mav.addObject("formModel",data.get());
 		return mav;
 	}
-	
+	/*
 	@PostMapping(path="/delete")
 	@Transactional(readOnly=false)
 	public ModelAndView remove(@RequestParam int id, ModelAndView mav) {
 		repository.deleteById(id);
 		return new ModelAndView("redirect:/");
 	}
+	*/
 }

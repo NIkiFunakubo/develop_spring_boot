@@ -1,14 +1,23 @@
 package com.example.powerwords.entity;
 
+import org.seasar.doma.Entity;
+import org.seasar.doma.GeneratedValue;
+import org.seasar.doma.GenerationType;
+import org.seasar.doma.Id;
+
+/*
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+*/
+
+
 
 @Entity
 public class Keyword {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
 	private String userName;
