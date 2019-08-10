@@ -48,14 +48,13 @@ public class KeywordController {
 		mav.addObject("formModel",data.get());
 		return mav;
 	}
-/*
+
 	@PostMapping(path="/edit")
 	@Transactional(readOnly=false)
 	public ModelAndView update(@ModelAttribute("formModel") Keyword keyword,ModelAndView mav) {
-		repository.saveAndFlush(keyword);
+		repository.update(keyword);
 		return new ModelAndView("redirect:/");
 	}
-	*/
 	
 	@GetMapping(path="/delete/{id}")
 	public ModelAndView delete(@PathVariable int id,ModelAndView mav) {
@@ -65,14 +64,14 @@ public class KeywordController {
 		mav.addObject("formModel",data.get());
 		return mav;
 	}
-	/*
+	
 	@PostMapping(path="/delete")
 	@Transactional(readOnly=false)
-	public ModelAndView remove(@RequestParam int id, ModelAndView mav) {
-		repository.deleteById(id);
+	public ModelAndView remove(@RequestParam int id,Keyword keyword,ModelAndView mav) {
+		repository.delete(keyword);
 		return new ModelAndView("redirect:/");
 	}
-	*/
+	
 	
 	
 	@GetMapping(path="/regist")
