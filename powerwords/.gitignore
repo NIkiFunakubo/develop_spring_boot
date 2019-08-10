@@ -33,5 +33,6 @@ out/
 
 
 ## Other ##
+/target/
 application.properties
 application.yml

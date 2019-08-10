@@ -22,20 +22,16 @@
 					<a class="btn btn-warning text-light" th:href="@{/login}">ログイン</a>
 			</div>
 			<div class="col-sm-4 text-right" sec:authorize="isAuthenticated()">				
-				
 				<!-- 最終的には、アイコン画像クリックでメニューが展開されるイメージを想定
-				
 				<img src="/images/default_icon.png" th:src="@{../images/default_icon.png}">
-				 
 				 -->
-				 
+				<a th:href="@{/regist}" class="btn btn-warning">投稿する</a> 
 				<span sec:authentication="name"></span>でログイン中				
 				<form role="form" id="logout" th:action="@{/logout}" method="post">
 					<button type="submit" class="btn btn-warning text-light">ログアウト</button>
 				</form>
 			</div>
 		</div>
-
 	</header>
 </body>
 
