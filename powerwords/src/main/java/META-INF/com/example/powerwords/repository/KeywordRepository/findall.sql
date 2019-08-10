@@ -1,1 +1,1 @@
-select * from keyword;
+select /*%expand*/* from keyword;

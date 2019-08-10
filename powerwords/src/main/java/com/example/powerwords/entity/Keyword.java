@@ -4,6 +4,8 @@ import org.seasar.doma.Entity;
 import org.seasar.doma.GeneratedValue;
 import org.seasar.doma.GenerationType;
 import org.seasar.doma.Id;
+import org.seasar.doma.SequenceGenerator;
+import org.seasar.doma.Table;
 
 /*
 import javax.persistence.Entity;
@@ -15,9 +17,10 @@ import javax.persistence.Id;
 
 
 @Entity
+@Table(name="keyword")
 public class Keyword {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
 	private String userName;
@@ -50,7 +53,7 @@ public class Keyword {
 	public String getDescription() {
 		return description;
 	}
-	public void setdescription() {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 	

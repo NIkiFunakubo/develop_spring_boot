@@ -32,14 +32,13 @@ public class KeywordController {
 		return mav;
 	}
 
-/*
 	@PostMapping(path = "/")
 	@Transactional(readOnly = false)
 	public ModelAndView form(@ModelAttribute("formModel") Keyword keyword, ModelAndView mav) {
-		repository.saveAndFlush(keyword);
+		repository.insert(keyword);
 		return new ModelAndView("redirect:/");
 	}
-	*/
+	
 	
 	@GetMapping(path="/edit/{id}")
 	public ModelAndView edit(@ModelAttribute Keyword keyword,@PathVariable int id,ModelAndView mav) {
@@ -74,4 +73,12 @@ public class KeywordController {
 		return new ModelAndView("redirect:/");
 	}
 	*/
+	
+	
+	@GetMapping(path="/regist")
+	public ModelAndView regist(@ModelAttribute("formModel") Keyword keyword, ModelAndView mav) {
+		mav.setViewName("regist");
+		return mav;
+	}
+	
 }
