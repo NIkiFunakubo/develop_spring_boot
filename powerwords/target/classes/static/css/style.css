@@ -2,24 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho&display=swap');
 
 
-.header-container {
-	height:100px;
-}
-
-.container {
-	background-color: F8F8FF;
-}
 
 .header-title {
 	font-family: 'Days One', sans-selif;
+	
 }
 
-.jambotron {
-	background-color:#e9ecef;
-	border-radius:.4rem;
-	padding: 2rem 1rem;	
-}
-
-.jambotron h1 {
-font-family: 'Sawarabi Mincho', sans-serif;
-}
+.link-style-btn{
+  border: none;
+ }
