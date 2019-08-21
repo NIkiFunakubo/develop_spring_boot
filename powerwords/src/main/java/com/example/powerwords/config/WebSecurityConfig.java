@@ -20,16 +20,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private UserService userService;
 	
+	
 	@Override
 	public void configure(WebSecurity web)throws Exception {
 		web.ignoring().antMatchers("/css/**","/images/**","/js/**");
 	}
 	
+	
+	
 	@Override
 	protected void configure(HttpSecurity http)throws Exception {
-		http
-			.authorizeRequests()
-				.antMatchers("/","/signup","/login","/login-error").permitAll()
+		http.authorizeRequests()
+				.antMatchers("/","/login","/login-error").permitAll()
+				.antMatchers("/signup").permitAll()
+				.antMatchers("/login").permitAll()
+				.antMatchers("/login-error").permitAll()
 				.antMatchers("/**").hasRole("USER")
 				.and()
 			.formLogin()

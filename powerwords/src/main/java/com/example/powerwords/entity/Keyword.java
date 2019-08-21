@@ -7,6 +7,9 @@ import org.seasar.doma.Id;
 import org.seasar.doma.SequenceGenerator;
 import org.seasar.doma.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /*
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,45 +21,19 @@ import javax.persistence.Id;
 
 @Entity
 @Table(name="keyword")
+@Getter
+@Setter
 public class Keyword {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
+	private int userId;
 	
 	private String userName;
 	
 	private String keyword;
 	
 	private String description;
-	
-	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	
-	public String getKeyword() {
-		return keyword;
-	}
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	
-	
 	
 }
