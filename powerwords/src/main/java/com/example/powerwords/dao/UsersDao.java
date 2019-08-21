@@ -8,15 +8,20 @@ import org.seasar.doma.Select;
 import org.seasar.doma.boot.ConfigAutowireable;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.powerwords.entity.Reservation;
+import com.example.powerwords.entity.Users;
 
 @ConfigAutowireable
 @Dao
-public interface ReservationDao {
+public interface UsersDao {
+	
 	@Select
-	List<Reservation> selectAll();
+	List<Users> selectAll();
+	
+	@Select
+	Users findByUsername(String username);
 	
 	@Insert
 	@Transactional
-	int insert(Reservation reservation);
+	int insert(Users user);
+
 }

@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.powerwords.dao.ReservationDao;
 import com.example.powerwords.entity.Reservation;
 
 @SpringBootApplication
