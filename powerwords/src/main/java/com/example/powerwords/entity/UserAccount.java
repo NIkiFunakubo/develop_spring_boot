@@ -9,7 +9,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public class UserAccount implements UserDetails{
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -256740067874995659L;
+	
 	
 	private Users user;
 	private Collection<GrantedAuthority> authorities;
