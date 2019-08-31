@@ -1,3 +1,4 @@
+/*
 package com.example.powerwords.config.handler;
 
 import java.io.IOException;
@@ -20,3 +21,4 @@ public class FailureHandler implements AuthenticationFailureHandler{
 		dispatch.forward(request, response);
 	}
 }
+*/
