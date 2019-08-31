@@ -1,3 +1,4 @@
+/*
 package com.example.powerwords.config;
 
 import javax.sql.DataSource;
@@ -40,3 +41,4 @@ public class AppConfig implements Config {
            this.sqlFileRepository = sqlFileRepository;
        }
 }
+*/

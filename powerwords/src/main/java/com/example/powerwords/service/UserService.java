@@ -3,6 +3,7 @@ package com.example.powerwords.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,7 +20,8 @@ import com.example.powerwords.entity.Users;
 @Service
 public class UserService implements UserDetailsService{
 	
-	@Autowired
+	
+	@Autowired(required=true)
 	private UsersDao dao;
 	
 	@Autowired
